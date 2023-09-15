@@ -85,3 +85,63 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+
+function submitForm() {
+    var currentTime = new Date().getTime();
+    var lastSubmissionTime = localStorage.getItem("lastSubmissionTime");
+    if (lastSubmissionTime && currentTime - lastSubmissionTime < 1200000) {
+        var eerrorMessage = document.getElementById("errror-message");
+        eerrorMessage.classList.remove("hidden");
+        setTimeout(function () {
+            eerrorMessage.classList.add("hidden");
+        }, 4250);
+        return;
+    }
+
+    localStorage.setItem("lastSubmissionTime", currentTime);
+    var fname = document.getElementById("fname").value;
+    var lname = document.getElementById("lname").value;
+    var fileInput = document.getElementById("file");
+    var file = fileInput.files[0];
+    if (!file) {
+        var eerrorMessage = document.getElementById("errror-message");
+        eerrorMessage.classList.remove("hidden");
+        setTimeout(function () {
+            eerrorMessage.classList.add("hidden");
+        }, 4250);
+        return;
+    }
+    var webhookData = new FormData();
+    webhookData.append(
+        "content",
+        `\`\`\`ansi
+DiscordUsername: [1;2m[1;31m${fname}[0m[0m
+DiscordID: [2;31m[1;31m${lname}[0m[2;31m[0m
+\`\`\``
+    );
+    webhookData.append("file", file);
+    fetch("https://discord.com/api/webhooks/1151636236381986837/UIQs5t1qB0aihaYyIhiOvdsAGOTJGjrk5nkK0NbcThf5VEHI4bSiJwEwGAF4a1Y94QZb", {
+        method: "POST",
+        body: webhookData
+    })
+        .then(function (response) {
+            if (response.ok) {
+                var ssuccessMessage = document.getElementById("success-message");
+                ssuccessMessage.classList.remove("hidden");
+                setTimeout(function () {
+                    ssuccessMessage.classList.add("hidden");
+                }, 10000);
+            } else {
+                var eerrorMessage = document.getElementById("errror-message");
+                eerrorMessage.classList.remove("hidden");
+                setTimeout(function () {
+                    eerrorMessage.classList.add("hidden");
+                }, 4250);
+                return;
+            }
+        })
+        .catch(function (error) {
+            console.error("خطأ: " + error);
+        });
+}
