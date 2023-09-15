@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Discord Station, Let's do it as robots!">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Discord Station - Tokens Host</title>
+    <link rel="icon"
+        href="https://cdn.discordapp.com/icons/1144850550731575391/fdbbc7c72a0e7b3f2fa250fbdb1d9c0b.webp?size=128">
+    <link href="style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <style>
+        .header_area {background: #0e120e;}
+        .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    justify-content: center;
+}
+#success-message{
+    font-size: 15px;
+    font-family: 'Rubik';
+    color: black;
+    position: fixed;
+    top: 17%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    background-color: #33ffb6;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 15%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.267);
+    z-index: 1443;
+}
+.membership-description > h2 {
+    font-family: 'Rubik';
+    font-weight: bold;
+    unicode-bidi: plaintext;
+    font-size: 30px;
+    color: white;
+}
+.membership-description > p {
+    margin-bottom: 0;
+    font-weight: bold;
+    letter-spacing: .5px;
+    color: #e8e3e3;
+    unicode-bidi:plaintext;
+}
+input[type=text], select {
+          width: 100%;
+          text-align: start;
+    unicode-bidi: plaintext;
+    font-family: 'Rubik';
+    outline: none;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        
+        input[type=submit] {
+          width: 100%;
+          background-color: #4CAF50;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+        
+label{
+    text-align: right;
+    width: 99.5%;
+    font-family: 'Rubik';
+}
+    </style>
+</head>
+<body>
+    <div id="preloader">
+        <div class="colorlib-load"></div>
+    </div>
+    <header class="header_area animated">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-10">
+                    <div class="menu_area">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <a class="navbar-brand" href="#">DS.</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar"
+                                aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span
+                                    class="navbar-toggler-icon"></span></button>
+                            <div class="collapse navbar-collapse" id="ca-navbar">
+                                <ul class="navbar-nav ml-auto" id="nav">
+                                    <li class="nav-item"><a class="nav-link" href="https://discord.gg/dis-st"
+                                            target="_blank">Contact</a></li>
+                                </ul>
+                                <div class="sing-up-button d-lg-none">
+                                    <a href="#">Get Started</a>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-2">
+                    <div class="sing-up-button d-none d-lg-block">
+                        <a href="index.html">Back to Homepage</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <br>
+    <br> <br> 
+    <section class="our-monthly-membership section_padding_50 clearfix">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div style="    text-align: center;
+                    margin-top: 15px;
+                    font-family: rubik;" class="membership-description">
+                        <h2 style="    font-size: 33px;">وفر تعبك</h2>
+                        <h2>وهنعمل لكل توكناتك Daily بنسبة 65% وبدون الحاجه لكابتشا أو بروكسي.</h2>
+                        <p>الحالة: <i style="color: #4fff4f;" class="fa fa-circle"></i> متصل، قدم الآن.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+<br>
+<br>
+                
+            <div style="    margin: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;">
+                <label for="fname">يوزرنيم الديسكورد الخاص بك</label>
+                <input type="text" id="fname" name="firstname" placeholder="أكتب هنا">
+        
+                <label for="lname">أي دي الديسكورد الخاص بك</label>
+                <input type="text" id="lname" name="lastname" placeholder="أكتب هنا">
+                <div style="    border: 1px solid #ccc;
+                border-radius: 4px;
+                width: 100%;
+                padding: 10px;">
+                <label style="unicode-bidi: plaintext;" for="file">ملف التوكنات ( <b>مقبول بصيغة txt فقط.</b> )</label>
+                <input type="file" id="file" accept=".txt">
+                   </div>
+                   <br>
+                <input style="    background: rgb(251, 57, 125);
+                color: #fff;
+                font-weight: 500;
+                display: inline-block;
+                cursor: pointer;
+                border: none;
+                height: 50px;
+                min-width: 178px;
+                font-family: 'Rubik';
+                line-height: 46px;
+                text-align: center;
+                border-radius: 50px;" type="button" value="إرسال" onclick="submitForm()">
+            </div>
+            <div id="success-message" class="hidden">.تم إرسال الطلب بنجاح</div>
+            <div id="error-message" class="hidden">حدث خطأ، أو انك تحاول بسرعة.</div>
+
+        </div>
+    <footer>
+    </footer>
+    <script src="js/one.js"></script>
+    <script src="js/all.js"></script>
+    <script src="js/three.js"></script>
+    <script src="js/two.js"></script>
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/footer-reveal.min.js"></script>
+    <script src="js/active.js"></script>
+</body>
+
+</html>
